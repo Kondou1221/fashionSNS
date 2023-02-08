@@ -9,7 +9,7 @@
     console.log(delete_check);
     console.log(delete_button);
 
-    let PRO_NO_box;
+    let PRO_NO_box = new Array();
 
     delete_button.addEventListener("click", (e) => {
         
