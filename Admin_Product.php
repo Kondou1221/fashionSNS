@@ -77,9 +77,6 @@ try{
         <button id="close_btn">閉じる</button>
     </div>
 
-
-    <div>aaaaaaaaaaaaaaa</div>
-
     <div class="flex justify-between items-center m-auto my-4 w-11/12">
         <div class=""><input type="button" value="削除"></div>
         <div class=""><input type="button" id="delete_button" value="新規登録"></div>      
