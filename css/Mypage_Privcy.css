@@ -1,0 +1,34 @@
+h2{
+    text-align: left;
+}
+
+#Mypage_Privcy{
+    height: 100%;
+    margin: 3% 5%;
+    display: none;
+}
+
+#Mypage_Privcy_Title{
+    text-align: center;
+    margin: 3%;
+}
+
+#Mypage_Privcy_Content{
+    text-align: center;
+    width: 90%;
+    margin: 1% auto;
+    word-wrap: break-word;
+}
+
+#Mypage_Privcy_Retrun_Button_div{
+    margin: 3%;
+    text-align: center;
+}
+
+#Mypage_Privcy_Retrun_Button{
+    cursor: pointer;
+    width: 5rem;
+    color: #fff;
+    background-color: #eb6100;
+    border-radius: 100vh;
+}

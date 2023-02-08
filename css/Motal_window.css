@@ -1,0 +1,26 @@
+#Motal_window_Success{
+    height: 40%;
+    margin: 3% 5%;
+    display: flex;
+    border: solid 5px #3f3f3f;
+    border-radius: 50px 50px;
+    background-color: #E0CAD5;
+    align-items: center;
+    display: none;
+}
+
+#Motal_window_Failure{
+    height: 40%;
+    margin: 3% 5%;
+    display: flex;
+    border: solid 5px #3f3f3f;
+    border-radius: 50px 50px;
+    background-color: #E0CAD5;
+    align-items: center;
+    display: none;
+}
+
+.Motal_window{
+    text-align: center;
+    margin: 0 auto;
+}

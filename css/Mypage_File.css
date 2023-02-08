@@ -1,0 +1,14 @@
+#Mypage_File{
+    height: 40%;
+    margin: 3% 5%;
+    display: flex;
+    border: solid 5px #3f3f3f;
+    border-radius: 50px 50px;
+    background-color: #E0CAD5;
+    align-items: center;
+    display: none;
+}
+
+#Mypage_File_form{
+    margin: 5rem auto;
+}

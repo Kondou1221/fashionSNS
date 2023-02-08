@@ -1,0 +1,72 @@
+
+#Mypage_NickName{
+    height: 40%;
+    margin: 3% 5%;
+    padding: 0 3%;
+    border: solid 5px #3f3f3f;
+    border-radius: 50px 50px;
+    background-color: #E0CAD5;
+    display: none;
+}
+#Before_NickName{
+    text-align: center;
+    margin: 2% 0;
+}
+
+#Main_NickName_text{
+    margin: 1% 0;
+    text-align: center;
+}
+
+#Main_NickName_textarea{
+    width: 15rem;
+}
+
+#Main_NickName_Error_Message{
+    text-align: center;
+    align-items: center;
+    height: 2rem;
+    width: 100%;
+}
+
+#Main_NickName_Error_Message_text{
+    color: red;
+}
+
+#Main_NickName_Button_Flex{
+    display: flex;
+    width: 80%;
+    margin: 1% auto;
+    align-items: center;
+}
+
+#Main_NickName_Retrun_Button_div{
+    width: 50%;
+    text-align: center;
+}
+
+#Main_NickName_Retrun_Button{
+    cursor: pointer;
+    width: 5rem;
+    color: #fff;
+    background-color: #eb6100;
+    border-radius: 100vh;
+}
+
+#Main_NickName_Button_div{
+    width: 50%;
+    text-align: center;
+}
+
+#Main_NickName_Button{
+    cursor: pointer;
+    width: 5rem;
+    color: #fff;
+    background-color: #eb6100;
+    border-radius: 100vh;
+}
+
+#Main_NickName_Button:hover{
+    color: #fff;
+    background: red;
+}

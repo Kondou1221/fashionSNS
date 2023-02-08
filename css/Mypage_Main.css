@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #f7f7f7;
+}
+
+main {
+    margin: 0 auto;
+    display: block;
+    height: 100%;
+    margin-top: 60px;
+    padding-top: 10px;
+}
+
+#Mypage_Main{
+    width: 80%;
+    margin: 10% 10%;
+    display: block;
+}
+
+#Mypage_info{
+    height: 40%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    background-color: #FCEAE2;
+}
+
+#User_info{
+    text-align: center;
+    width: 65%;
+}
+
+#User_Id{
+    width: 100%;
+    margin: 5% 0;
+    text-align: center;
+}
+
+#User_Name{
+    width: 100%;
+    margin: 5% 0;
+    text-align: center;
+}
+
+#User_Img{
+    width: 23%;
+    height: 100%;
+    text-align: center;
+}
+
+#User_Pro_Img{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.Change_button{
+    height: 19%;
+    margin: 1% 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2%;
+    background-color: #FCEAE2;
+    cursor: pointer;
+}
+
+.Change_button_Arrow{
+    height: 3rem;
+}
+
+.Change_button_Arrow_img{
+    height: 100%;
+}
