@@ -3,7 +3,7 @@
     const delete_check = doc.querySelectorAll(".delete_check");
     const delete_button = doc.querySelector("#delete_button");
     const modal = doc.querySelector("#modal");
-    const modal_text = querySelector("modal_text");
+    const modal_text = doc.querySelector("#modal_text");
     const close_btn = doc.querySelector("#close_btn");
     const overlay = doc.querySelector("#overlay");
 
@@ -25,23 +25,27 @@
         modal.style.opacity = 1;
         modal.style.visibility = "visible";
         overlay.style.opacity = 0.4;
-        overlay.style.visibility = "visible";
         close_btn.style.visibility = "hidden";
 
-        fetch(`https://click.ecc.ac.jp/ecc/sys2_iesk2bc_a/test_html/WebAPI`, {
+        fetch(`https://click.ecc.ac.jp/ecc/sys2_iesk2bc_a/test_html/WebAPI/Admin_ProductAPI.php`, {
             method: "POST",
             body: new URLSearchParams({
-                item_cate : JSON.stringify(PRO_NO_box)
+                Product_No : JSON.stringify(PRO_NO_box)
             })
         })
         .then((response)=>{
             return response.json();
         })
         .then((data)=>{
+
+            console.log(data);
+
             if(true){
                 modal_text.innerHTML = "変更完了";
+                close_btn.style.visibility = "visible";
             }else{
                 modal_text.innerHTML = "変更失敗";
+                close_btn.style.visibility = "visible";
             }
         });
 
@@ -59,6 +63,7 @@
         modal.style.visibility = "hidden";
         overlay.style.opacity = 0;
         overlay.style.visibility = "hidden";
+        window.location.reload();
     });
 
 

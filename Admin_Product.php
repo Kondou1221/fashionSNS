@@ -81,8 +81,8 @@ try{
     </div>
 
     <div class="flex justify-between items-center m-auto my-4 w-11/12">
-        <div class=""><input type="button" value="削除"></div>
-        <div class=""><input type="button" id="delete_button" value="新規登録"></div>      
+        <div class=""><input type="button" id="delete_button" value="削除"></div>
+        <div class=""><input type="button" id="" value="新規登録"></div>      
     </div>
 </main>
 <script src="js/Admin_Product.js"></script>
