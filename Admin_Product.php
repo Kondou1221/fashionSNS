@@ -15,7 +15,8 @@ try{
     $dbh -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     $sql = "SELECT * FROM PRODUCT AS P
-            JOIN CATEGORY AS C ON P.CATE_NO = C.CATE_NO";
+            JOIN CATEGORY AS C ON P.CATE_NO = C.CATE_NO
+            ORDER BY P.PRO_NO";
 
     $prepare = $dbh -> prepare($sql);
 
@@ -30,7 +31,7 @@ try{
     $prepare = null;
 
 }catch (PDOException $e){
-  exit("読み込みに失敗しました リロードしてください");
+  exit("読み込みに失敗しました リロードしてください".$e->getMessage() );
 }
 
 ?>
@@ -48,7 +49,7 @@ try{
     <div class="overflow-y-scroll h-96">
         <table class="overflow-auto border-separate border border-green-800 m-auto w-11/12">
             <thead>
-                <tr class="z-10 sticky top-0 left-0 z-10 bg-red-700">
+                <tr class="sticky top-0 left-0 bg-red-700">
                     <th class="border border-green-800 "></th>
                     <th class="border border-green-800 ">商品名</th>
                     <th class="border border-green-800 ">カテゴリ名</th>
@@ -70,11 +71,13 @@ try{
         </table>
     </div>
 
-    <div id="overlay"></div>
+    <div id="overlay" class="fixed top-0 left-0 w-full h-screen bg-gray-800 opacity-0 invisible delay-[.3s]"></div>
 
-    <div id="modal" style="display: none;">
-        <p>モーダル</p>
-        <button id="close_btn">閉じる</button>
+    <div id="modal" class="bg-gray-50 max-w-lg w-4/5 h-5/6 py-4 px-5 fixed top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] opacity-0 invisible delay-[.3s]">
+        <div class="m-auto text-center">
+            <p id="modal_text">変更中</p>
+            <button id="close_btn">閉じる</button>
+        </div>
     </div>
 
     <div class="flex justify-between items-center m-auto my-4 w-11/12">
