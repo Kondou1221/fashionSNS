@@ -28,7 +28,7 @@
         overlay.style.visibility = "visible";
         close_btn.style.visibility = "hidden";
 
-        fetch(`https://click.ecc.ac.jp/ecc/sys2_iesk2bc_a/test_html/WebAPI/Update_Nickname.php?upnick=${NickName_After}`, {
+        fetch(`https://click.ecc.ac.jp/ecc/sys2_iesk2bc_a/test_html/WebAPI`, {
             method: "POST",
             body: new URLSearchParams({
                 item_cate : JSON.stringify(PRO_NO_box)
