@@ -73,7 +73,7 @@
     });
 
     Insert_button.addEventListener("click", (e) => {
-        window.location,href = "パス名";
+        window.location.href = "Admin_NewInsert.php?TABLE=PRODUCT_DETAIL";
     });
 
 }

@@ -31,7 +31,7 @@ try{
     $prepare = null;
 
 }catch (PDOException $e){
-  exit("読み込みに失敗しました リロードしてください");
+  exit("読み込みに失敗しました リロードしてください".$e->getMessage());
 }
 
 ?>
