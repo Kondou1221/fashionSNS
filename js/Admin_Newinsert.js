@@ -37,15 +37,40 @@
 
     let INSERT_DATA = new Object();
 
-    INSE_SHOP.addEventListener("click", (e) => {
-        INSE_STORE_div.style.display = "none";
-        INSE_SHOP_div.style.display = "block";
-    });
+    if( INSE_SHOP ){
+        INSE_SHOP.addEventListener("click", (e) => {
+            INSE_STORE_div.style.display = "none";
+            INSE_SHOP_div.style.display = "block";
+        });
+    }
 
-    INSE_STORE.addEventListener("click", (e) => {
-        INSE_STORE_div.style.display = "block";
-        INSE_SHOP_div.style.display = "none";
-    });
+    if(INSE_STORE){
+        INSE_STORE.addEventListener("click", (e) => {
+            INSE_STORE_div.style.display = "block";
+            INSE_SHOP_div.style.display = "none";
+        });
+    }
+
+    if(PRO_IMG){
+        PRO_IMG.addEventListener("change",(e) => {
+            console.log(PRO_IMG.value);
+            let reader = new FileReader();
+            reader.onload = function(e){
+                PRO_IMG_PLASE.src = e.target.result;
+                PRO_IMG_PLASE.style.display = "block";
+            }
+        });
+    }
+
+    if(UIMG){
+        UIMG.addEventListener("change",(e) => {
+            let reader = new FileReader();
+            reader.onload = function(e){
+                UIMG_PLASE.src = e.target.result;
+                UIMG_PLASE.style.display = "block";
+            }
+        });
+    }
 
     overlay.addEventListener("click", (e) => {
         modal.style.opacity = 0;
@@ -73,6 +98,7 @@
         if( table_kind.value == "CATEGORY" ){
 
             INSERT_DATA["CNAME"] = CNAME.value;
+            INSERT_DATA["TABLE"] = "CATEGORY";
 
         }else if( table_kind.value == "PRODUCT_DETAIL" ){
 
@@ -83,13 +109,17 @@
             if( PRO_URL.value.trim() != "" ){
                 INSERT_DATA["PRO_URL"] = PRO_URL.value;
             }
+            INSERT_DATA["TABLE"] = "PRODUCT_DETAIL";
 
         }else if( table_kind.value == "PRODUCT" ){
 
             INSERT_DATA["PNAME"] = PNAME.value;
             INSERT_DATA["CATE_GORY"] = CATE_GORY.value;
             INSERT_DATA["STORE_NO"] = STORE_NO.value;
-            INSERT_DATA["PRO_IMG"] = PRO_IMG.value;
+            if(PRO_IMG.value != ""){
+                INSERT_DATA["PRO_IMG"] = PRO_IMG.value;
+            }
+            INSERT_DATA["TABLE"] = "PRODUCT";
 
         }else if( table_kind.value == "STORE" ){
 
@@ -100,6 +130,7 @@
                 INSERT_DATA["STORE_NO_STORE"] = STORE_NO_STORE.value;
                 INSERT_DATA["SHOPNAME"] = SHOPNAME.value;    
             }
+            INSERT_DATA["TABLE"] = "STORE";
 
         }else if( table_kind.value == "USER" ){
 
@@ -108,8 +139,13 @@
             INSERT_DATA["UNAME"] = UNAME.value;
             if(ROLL.checked){
                 INSERT_DATA["ROLL"] = 1;
+            }else{
+                INSERT_DATA["ROLL"] = 0;
             }
-            INSERT_DATA["UIMG"] = UIMG.value;
+            if(UIMG.value != ""){
+                INSERT_DATA["UIMG"] = UIMG.value;
+            }
+            INSERT_DATA["TABLE"] = "USER";
 
         }
 
@@ -136,5 +172,7 @@
         });
 
     });
+
+    console.log("suc");
 
 }
