@@ -2,36 +2,36 @@
     const doc = document;
     const delete_check = doc.querySelectorAll(".delete_check");
     const delete_button = doc.querySelector("#delete_button");
+    const Insert_button = doc.querySelector("#Insert_button");
     const modal = doc.querySelector("#modal");
     const modal_text = doc.querySelector("#modal_text");
     const close_btn = doc.querySelector("#close_btn");
-    const Insert_button = doc.querySelector("#Insert_button");
     const overlay = doc.querySelector("#overlay");
 
     console.log(delete_check);
     console.log(delete_button);
 
-    let PRO_NO_box = new Array();
+    let USER_NO_box = new Array();
 
     delete_button.addEventListener("click", (e) => {
         
         for(let i = 0 ; i < delete_check.length ; i++){
             if( delete_check[i].checked ){
-                PRO_NO_box.push(delete_check[i].name);
+                USER_NO_box.push(delete_check[i].name);
             }
         }
 
-        console.log(PRO_NO_box);
+        console.log(USER_NO_box);
 
         modal.style.opacity = 1;
         modal.style.visibility = "visible";
         overlay.style.opacity = 0.4;
         close_btn.style.visibility = "hidden";
 
-        fetch(`https://click.ecc.ac.jp/ecc/sys2_iesk2bc_a/test_html/WebAPI/Admin_ProductAPI.php`, {
+        fetch(`https://click.ecc.ac.jp/ecc/sys2_iesk2bc_a/test_html/WebAPI/Admin_UserAPI.php`, {
             method: "POST",
             body: new URLSearchParams({
-                Product_No : JSON.stringify(PRO_NO_box)
+                User_No : JSON.stringify(USER_NO_box)
             })
         })
         .then((response)=>{

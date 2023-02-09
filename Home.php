@@ -98,7 +98,6 @@ try{
     $prepare = null;
 
 }catch (PDOException $e){
-
   exit($e->getCode()." : ".$e->getMessage());
 }
 
